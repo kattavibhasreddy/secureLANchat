@@ -23,7 +23,7 @@ A simple end-to-end encrypted chat application that works over a local network u
 
 ### Server (`server.py`)
 - Built with Python `socket` and `threading`
-- Listens for client connections on port 5000
+- Listens for client connections on port 8000
 - Stores connected clients in a thread-safe list
 - **Forwards encrypted messages between clients without decrypting**
 - Relays ciphertext only (cannot read plaintext)
@@ -114,7 +114,7 @@ python server.py
 
 You should see:
 ```
-[*] Server listening on 0.0.0.0:5000
+[*] Server listening on 0.0.0.0:8000
 [*] Waiting for connections...
 ```
 
@@ -161,7 +161,7 @@ sudo wireshark
 ```
 
 - Select `Loopback: lo` interface
-- Apply filter: `tcp.port == 5000`
+- Apply filter: `tcp.port == 8000`
 - Click "Start Capture"
 
 ### 2. Send Messages
@@ -189,7 +189,7 @@ This proves the messages are encrypted in transit!
 
 ```
 Terminal 1 (Server):
-[*] Server listening on 0.0.0.0:5000
+[*] Server listening on 0.0.0.0:8000
 [*] Waiting for connections...
 [+] New connection from ('127.0.0.1', 54321)
 [+] New connection from ('127.0.0.1', 54322)
@@ -202,7 +202,7 @@ Terminal 2 (Client - Alice):
 Enter your username: Alice
 Enter shared password: secret123
 Enter server IP (default 127.0.0.1): 
-[*] Connecting to 127.0.0.1:5000...
+[*] Connecting to 127.0.0.1:8000...
 [*] Connected! Type your messages (Ctrl+C to quit)
 
 You: Hey everyone!
@@ -215,7 +215,7 @@ Terminal 3 (Client - Bob):
 Enter your username: Bob
 Enter shared password: secret123
 Enter server IP (default 127.0.0.1): 
-[*] Connecting to 127.0.0.1:5000...
+[*] Connecting to 127.0.0.1:8000...
 [*] Connected! Type your messages (Ctrl+C to quit)
 
 [Alice] Hey everyone!
@@ -277,7 +277,7 @@ This allows the receiver to know exactly how many bytes to read for each message
 **Solution**: Ensure all clients use the **exact same password**
 
 **Problem**: Messages not appearing  
-**Solution**: Check that firewall allows port 5000
+**Solution**: Check that firewall allows port 8000
 
 **Problem**: Can't connect from other machines  
 **Solution**: Use the server's LAN IP (e.g., `192.168.1.100`) instead of `127.0.0.1`
