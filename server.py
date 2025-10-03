@@ -1,35 +1,43 @@
 """
-Threaded TCP server for encrypted chat.
-Relays encrypted messages between clients without decrypting them.
+Threaded TCP server for encrypted chat with password-based rooms.
+Relays encrypted messages between clients in the same password group.
 """
 
 import socket
 import threading
 import struct
+import hashlib
 
 
 class ChatServer:
     def __init__(self, host='0.0.0.0', port=8000):
         self.host = host
         self.port = port
-        self.clients = []
-        self.clients_lock = threading.Lock()
+        # Dictionary to store clients by password hash (room)
+        self.rooms = {}  # {password_hash: [client_sockets]}
+        self.rooms_lock = threading.Lock()
         
-    def broadcast(self, message_bytes: bytes, sender_socket=None):
+    def get_password_hash(self, password: str) -> str:
+        """Get SHA-256 hash of password for room identification."""
+        return hashlib.sha256(password.encode('utf-8')).hexdigest()
+    
+    def broadcast_to_room(self, message_bytes: bytes, room_hash: str, sender_socket=None):
         """
-        Broadcast encrypted message to all clients except sender.
+        Broadcast encrypted message to all clients in the same room except sender.
         
         Args:
             message_bytes: Encrypted message bytes to broadcast
+            room_hash: Password hash identifying the room
             sender_socket: Socket of the client who sent the message
         """
-        with self.clients_lock:
-            for client_socket in self.clients:
-                if client_socket != sender_socket:
-                    try:
-                        self.send_message(client_socket, message_bytes)
-                    except Exception as e:
-                        print(f"Error broadcasting to client: {e}")
+        with self.rooms_lock:
+            if room_hash in self.rooms:
+                for client_socket in self.rooms[room_hash]:
+                    if client_socket != sender_socket:
+                        try:
+                            self.send_message(client_socket, message_bytes)
+                        except Exception as e:
+                            print(f"Error broadcasting to client in room {room_hash[:8]}...: {e}")
                         
     def send_message(self, client_socket: socket.socket, message_bytes: bytes):
         """
@@ -87,23 +95,49 @@ class ChatServer:
         """
         print(f"[+] New connection from {address}")
         
-        with self.clients_lock:
-            self.clients.append(client_socket)
-            
+        # First message should contain the password hash for room assignment
         try:
+            password_hash = self.receive_message(client_socket)
+            if not password_hash:
+                client_socket.close()
+                return
+                
+            room_hash = password_hash.decode('utf-8')
+            print(f"[*] Client {address} joining room {room_hash[:8]}...")
+            
+            # Add client to the appropriate room
+            with self.rooms_lock:
+                if room_hash not in self.rooms:
+                    self.rooms[room_hash] = []
+                self.rooms[room_hash].append(client_socket)
+                room_size = len(self.rooms[room_hash])
+                
+            print(f"[*] Room {room_hash[:8]}... now has {room_size} client(s)")
+            
+            # Send confirmation
+            self.send_message(client_socket, b"JOINED_ROOM")
+            
+            # Handle messages from this client
             while True:
                 message_bytes = self.receive_message(client_socket)
                 if not message_bytes:
                     break
                     
-                print(f"[*] Relaying encrypted message from {address}")
-                self.broadcast(message_bytes, client_socket)
+                print(f"[*] Relaying encrypted message from {address} in room {room_hash[:8]}...")
+                self.broadcast_to_room(message_bytes, room_hash, client_socket)
                 
         except Exception as e:
             print(f"[!] Error handling client {address}: {e}")
         finally:
-            with self.clients_lock:
-                self.clients.remove(client_socket)
+            # Remove client from room
+            with self.rooms_lock:
+                for room_hash, clients in self.rooms.items():
+                    if client_socket in clients:
+                        clients.remove(client_socket)
+                        if not clients:  # Remove empty room
+                            del self.rooms[room_hash]
+                        print(f"[-] Client {address} left room {room_hash[:8]}... (room now has {len(clients)} client(s))")
+                        break
             client_socket.close()
             print(f"[-] Connection closed: {address}")
             

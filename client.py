@@ -7,6 +7,7 @@ import socket
 import threading
 import struct
 import sys
+import hashlib
 from crypto import get_key, encrypt, decrypt
 
 
@@ -71,9 +72,16 @@ class ChatClient:
                 if not encrypted_message:
                     break
                     
-                decrypted_message = decrypt(encrypted_message, self.key)
-                print(f"\n{decrypted_message}")
-                print(f"You: ", end='', flush=True)
+                # Try to decrypt the message
+                try:
+                    decrypted_message = decrypt(encrypted_message, self.key)
+                    print(f"\n{decrypted_message}")
+                    print(f"You: ", end='', flush=True)
+                except Exception as decrypt_error:
+                    # Message couldn't be decrypted - likely from different password group
+                    # Just ignore it and continue (don't disconnect)
+                    print(f"\n[*] Received message from different chat room (ignoring)")
+                    print(f"You: ", end='', flush=True)
                 
             except Exception as e:
                 if self.running:
@@ -120,18 +128,30 @@ class ChatClient:
             return
             
         self.key = get_key(password)
+        password_hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
         
         try:
             self.socket.connect((self.host, self.port))
             print(f"[*] Connecting to {self.host}:{self.port}...")
             
-            self.running = True
+            # Send password hash to join the appropriate room
+            self.send_message(password_hash.encode('utf-8'))
             
-            receive_thread = threading.Thread(target=self.receive_messages)
-            receive_thread.daemon = True
-            receive_thread.start()
-            
-            self.send_messages()
+            # Wait for room join confirmation
+            confirmation = self.receive_message()
+            if confirmation and confirmation == b"JOINED_ROOM":
+                print(f"[*] Connected! Joined chat room with password: {password}")
+                print(f"[*] Type your messages (Ctrl+C to quit)\n")
+                
+                self.running = True
+                
+                receive_thread = threading.Thread(target=self.receive_messages)
+                receive_thread.daemon = True
+                receive_thread.start()
+                
+                self.send_messages()
+            else:
+                print("[!] Failed to join chat room")
             
         except Exception as e:
             print(f"[!] Connection error: {e}")
