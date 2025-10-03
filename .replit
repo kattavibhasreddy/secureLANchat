@@ -24,15 +24,23 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python server.py"
-waitForPort = 8000
+args = "python web_server.py"
+waitForPort = 5000
 
 [workflows.workflow.metadata]
-outputType = "console"
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
 
 [[ports]]
 localPort = 8000
 externalPort = 80
+
+[[ports]]
+localPort = 8001
+externalPort = 3001
 
 [[ports]]
 localPort = 43813
