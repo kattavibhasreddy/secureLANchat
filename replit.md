@@ -2,7 +2,7 @@
 
 ## Overview
 
-A terminal-based, end-to-end encrypted chat application for local networks. The system uses a relay server architecture where clients encrypt messages before sending and decrypt upon receiving - the server only forwards encrypted messages without ever accessing plaintext. Built with Python's socket and threading libraries, the application demonstrates core networking concepts including the client-server model, TCP sockets, message framing, and threading for concurrent connections.
+An end-to-end encrypted chat application for local networks with both terminal-based and web-based clients. The system uses a relay server architecture where clients encrypt messages before sending and decrypt upon receiving - the server only forwards encrypted messages without ever accessing plaintext. Built with Python's socket and threading libraries, the application demonstrates core networking concepts including the client-server model, TCP sockets, message framing, and threading for concurrent connections.
 
 ## User Preferences
 
@@ -38,15 +38,25 @@ Preferred communication style: Simple, everyday language.
 
 **Message Broadcasting**: Server maintains a list of connected client sockets and broadcasts incoming encrypted messages to all clients except the sender, enabling group chat functionality.
 
+## Recent Changes
+
+**October 3, 2025**: Added web-based frontend with browser interface. The application now supports both terminal clients (using TCP sockets) and web clients (using WebSockets). Web clients use Web Crypto API for client-side encryption with AES-GCM instead of AES-EAX, maintaining the same end-to-end encryption security model.
+
 ## External Dependencies
 
-**PyCryptodome**: Cryptographic library providing AES-EAX encryption primitives. Used specifically for the `Crypto.Cipher.AES` module to implement authenticated encryption. This is the primary external dependency for security functionality.
+**PyCryptodome**: Cryptographic library providing AES-EAX encryption primitives for terminal clients. Used specifically for the `Crypto.Cipher.AES` module to implement authenticated encryption.
+
+**WebSockets**: Python library for WebSocket protocol support, enabling real-time bidirectional communication with web browsers.
 
 **Python Standard Library**: The application relies heavily on built-in modules:
 - `socket`: TCP/IP networking and socket operations
 - `threading`: Concurrent client handling and message reception
 - `struct`: Binary data packing for message framing (length prefixes)
 - `hashlib`: SHA-256 key derivation from passwords
+- `http.server`: Serving static HTML/CSS/JS files for web frontend
+- `asyncio`: Asynchronous WebSocket server implementation
+
+**Web Crypto API**: Built-in browser cryptography API for client-side encryption in the web frontend. Provides SHA-256 hashing and AES-GCM encryption without requiring external libraries.
 
 **No Database**: The application is stateless with no persistent storage. Messages are relayed in real-time and not stored. Client lists are maintained in-memory only during server runtime.
 
