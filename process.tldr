@@ -36,9 +36,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 316,
-			"y": 455.6000061035156,
-			"lastActivityTimestamp": 1761663592474,
+			"x": 846.261711108217,
+			"y": 89.36675800699594,
+			"lastActivityTimestamp": 1763477050571,
 			"meta": {}
 		},
 		{
@@ -130,6 +130,45 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 996.3687591552734,
+			"y": 963.4501581192017,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:B6mV7DUvaMaN9fyPqMHyq",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 441.01251220703125,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Now they have a secure shared encryption key"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aAw6zBiG",
+			"typeName": "shape"
+		},
+		{
 			"meta": {},
 			"id": "binding:XE9q1CsD0axtQQBWoIG2h",
 			"type": "arrow",
@@ -148,9 +187,9 @@
 			"typeName": "binding"
 		},
 		{
-			"x": 28,
-			"y": 8,
-			"z": 1,
+			"x": -479.875014844194,
+			"y": -52.853325593704156,
+			"z": 0.6310693743467408,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -257,12 +296,23 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": "shape:oH81NXcHkgSC8PQm9AN6H",
+			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:oH81NXcHkgSC8PQm9AN6H"
+				"shape:2vswe-wPiOwPNPidplWnG",
+				"shape:8MaAjj-wZIn82gB1Znh1a",
+				"shape:UHuCZL79Twduhg4TVIznW",
+				"shape:-PZEaGQXMSVyE6nZ-i4bb",
+				"shape:DmUI-ntDEK7vodngzi0-R",
+				"shape:6jts1-sHFiBv_QPFvjDzd",
+				"shape:FJG7pYWmloNDmRqsd7b9C",
+				"shape:M0WALfg4ZWtfPAR754sd3",
+				"shape:cOV2EnkSZFmoCebf59xfD",
+				"shape:Lwl2KdGKy7utGGIALfchn",
+				"shape:nJ9V6Wxqd5lejYwvUie6h",
+				"shape:B6mV7DUvaMaN9fyPqMHyq"
 			],
-			"hoveredShapeId": "shape:oH81NXcHkgSC8PQm9AN6H",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -270,6 +320,63 @@
 			"id": "instance_page_state:page:page",
 			"pageId": "page:page",
 			"typeName": "instance_page_state"
+		},
+		{
+			"x": 1121.5375061035156,
+			"y": 441.8000297546387,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:cOV2EnkSZFmoCebf59xfD",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 156,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": false,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "User1 shares public key to user2"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a6sUW7v2",
+			"typeName": "shape"
+		},
+		{
+			"meta": {},
+			"id": "binding:RXOcssLJPsUGwvf2rT7Cg",
+			"type": "arrow",
+			"fromId": "shape:6jts1-sHFiBv_QPFvjDzd",
+			"toId": "shape:DmUI-ntDEK7vodngzi0-R",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.6439998626708985,
+					"y": 0.788575672442254
+				},
+				"snap": "none",
+				"terminal": "end"
+			},
+			"typeName": "binding"
 		},
 		{
 			"x": 121.89373779296875,
@@ -309,6 +416,147 @@
 			"parentId": "page:page",
 			"index": "a9kMCA0V",
 			"typeName": "shape"
+		},
+		{
+			"x": 1309.675048828125,
+			"y": 252,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:DmUI-ntDEK7vodngzi0-R",
+			"type": "note",
+			"props": {
+				"color": "black",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "User2(client) connects to server"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "generates their own"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " public"
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "italic"
+										}
+									],
+									"text": "key2 & private"
+								},
+								{
+									"type": "text",
+									"text": "key2 using RSA"
+								}
+							]
+						}
+					]
+				},
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"labelColor": "black",
+				"growY": 69.60000610351562,
+				"fontSizeAdjustment": 22,
+				"url": "",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a3Eh9OXS",
+			"typeName": "shape"
+		},
+		{
+			"x": 1105.6750183105469,
+			"y": 431.6000061035156,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:FJG7pYWmloNDmRqsd7b9C",
+			"type": "arrow",
+			"props": {
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
+				"dash": "draw",
+				"size": "m",
+				"fill": "none",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"x": 204.00001525878906,
+					"y": 6.79998779296875
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				},
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a4f17cEG",
+			"typeName": "shape"
+		},
+		{
+			"meta": {},
+			"id": "binding:-J4IT7Ny6VMekg3wx4YUR",
+			"type": "arrow",
+			"fromId": "shape:-PZEaGQXMSVyE6nZ-i4bb",
+			"toId": "shape:UHuCZL79Twduhg4TVIznW",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.22400009155273437,
+					"y": 0.05100006103515625
+				},
+				"snap": "none",
+				"terminal": "end"
+			},
+			"typeName": "binding"
 		},
 		{
 			"x": 374.3999938964844,
@@ -352,6 +600,194 @@
 			},
 			"parentId": "page:page",
 			"index": "a3YGioal",
+			"typeName": "shape"
+		},
+		{
+			"x": 1105.6750030517578,
+			"y": 745.5999755859375,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:UHuCZL79Twduhg4TVIznW",
+			"type": "note",
+			"props": {
+				"color": "black",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "when they want to chat"
+								}
+							]
+						}
+					]
+				},
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"labelColor": "black",
+				"growY": 0,
+				"fontSizeAdjustment": 22,
+				"url": "",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a2heLvTv",
+			"typeName": "shape"
+		},
+		{
+			"x": 1299.2750396728516,
+			"y": 351.6000061035156,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:8MaAjj-wZIn82gB1Znh1a",
+			"type": "arrow",
+			"props": {
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
+				"dash": "draw",
+				"size": "m",
+				"fill": "none",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"x": -192.80001831054688,
+					"y": -2
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				},
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a1wUpxIj",
+			"typeName": "shape"
+		},
+		{
+			"x": 1124.0750274658203,
+			"y": 277.40002059936523,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:M0WALfg4ZWtfPAR754sd3",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 151.80001831054688,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": false,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "User2 shares public key to user1"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a5zYSU4yG",
+			"typeName": "shape"
+		},
+		{
+			"x": 725.868782043457,
+			"y": 605.2500238418579,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Lwl2KdGKy7utGGIALfchn",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 322.8125,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "user1 sends an aes encrypted key "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "which has been encrypted "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "with user2 publickey"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a7sl8x7S",
 			"typeName": "shape"
 		},
 		{
@@ -485,6 +921,103 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 903.2750549316406,
+			"y": 244.79998779296875,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2vswe-wPiOwPNPidplWnG",
+			"type": "note",
+			"props": {
+				"color": "black",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "User1(client) connects to server"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "genereates their own"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " public"
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "italic"
+										}
+									],
+									"text": "key1 & private"
+								},
+								{
+									"type": "text",
+									"text": "key1 using RSA"
+								}
+							]
+						}
+					]
+				},
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"labelColor": "black",
+				"growY": 69.60000610351562,
+				"fontSizeAdjustment": 22,
+				"url": "",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a1EkSzyS",
+			"typeName": "shape"
+		},
+		{
+			"meta": {},
+			"id": "binding:2vV3BO8kpEt3RHX1-mYvM",
+			"type": "arrow",
+			"fromId": "shape:FJG7pYWmloNDmRqsd7b9C",
+			"toId": "shape:DmUI-ntDEK7vodngzi0-R",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.027999954223632814,
+					"y": 0.6735905118406729
+				},
+				"snap": "none",
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
 			"meta": {},
 			"id": "binding:o3QdU6opiB8QQR4CVDvMM",
 			"type": "arrow",
@@ -520,8 +1053,7 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:size": "s",
-				"tldraw:textAlign": "middle"
+				"tldraw:color": "black"
 			},
 			"brush": null,
 			"scribbles": [],
@@ -536,8 +1068,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 720,
-				"h": 820
+				"w": 855.2000122070312,
+				"h": 711.2000122070312
 			},
 			"insets": [
 				false,
@@ -554,7 +1086,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 1.25,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": false,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -604,6 +1136,50 @@
 			},
 			"parentId": "page:page",
 			"index": "a2Z0lMkV",
+			"typeName": "shape"
+		},
+		{
+			"x": 988.8750228881836,
+			"y": 521,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:-PZEaGQXMSVyE6nZ-i4bb",
+			"type": "arrow",
+			"props": {
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
+				"dash": "draw",
+				"size": "s",
+				"fill": "none",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"x": 175.99999237060547,
+					"y": 223.60003662109375
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				},
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a2zUjBz3G",
 			"typeName": "shape"
 		},
 		{
@@ -725,6 +1301,50 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1248.875015258789,
+			"y": 734.6000366210938,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:6jts1-sHFiBv_QPFvjDzd",
+			"type": "arrow",
+			"props": {
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
+				"dash": "draw",
+				"size": "s",
+				"fill": "none",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"x": 50.4000244140625,
+					"y": -102.80001831054688
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				},
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a3sJ5wZ4",
+			"typeName": "shape"
+		},
+		{
 			"x": -148.60623931884766,
 			"y": 605.2500238418579,
 			"rotation": 0,
@@ -785,6 +1405,57 @@
 			},
 			"parentId": "page:page",
 			"index": "a7gOJJqV",
+			"typeName": "shape"
+		},
+		{
+			"x": 1334.606300354004,
+			"y": 605.649956703186,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:nJ9V6Wxqd5lejYwvUie6h",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 255.7375030517578,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "user2 decrypts the aes key"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " using his own privatekey"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a8wasOUZ",
 			"typeName": "shape"
 		}
 	]
